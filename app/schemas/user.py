@@ -1,4 +1,6 @@
-from pydantic import BaseModel,EmailStr,SecretStr,ConfigDict
+from pydantic import (
+    BaseModel,EmailStr,SecretStr,ConfigDict,Field
+    )
 from datetime import datetime
 from fastapi import Form
 from .enums import Sex
@@ -8,11 +10,10 @@ from .enums import Sex
 class UserCreateLocal(BaseModel):
     username : str
     email : EmailStr
-    password : SecretStr
-
+    password : SecretStr = Field(min_length=8)
+    pa : str 
     phone : str|None = None
-    sexe : Sex 
-
+    
     @classmethod
     def as_form(cls,
         username : str = Form(...),
