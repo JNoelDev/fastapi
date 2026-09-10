@@ -1,14 +1,13 @@
 from fastapi import status,HTTPException
 from app.core.security import hash_password
-from app.modules.users.register.model import User
 from app.modules.users.register.repository import UserRepository
-from app.modules.users.register.schema import Register
+from app.modules.users.register.schema import Register,ResponseRegister
 
 class UserService:
     def __init__(self,repo:UserRepository) ->None:
         self.repo=repo
 
-    async def register_1(self,payload:Register) -> User:
+    async def register_1(self,payload:Register):
         existing_email = await self.repo.get_by_email(payload.email)
         if existing_email:
             raise HTTPException(
