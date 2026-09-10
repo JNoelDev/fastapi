@@ -7,12 +7,12 @@ class Register(BaseModel):
     first_name : str = Field(min_length=4,max_length=20)
     last_name:str = Field(min_length=4,max_length=20)
     email:EmailStr
-    password:str
+    password:str 
 
 
 class ResponseRegister(BaseModel):
     model_config = {"from_attributes":True}
-    userd_id: uuid.UUID
+    id: uuid.UUID
     first_name:str
     last_name:str
     created_at:datetime

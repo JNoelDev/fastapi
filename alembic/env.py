@@ -14,7 +14,9 @@ database_url=make_url(get_settings().database_url)
 sync_driver="sqlite" if database_url.get_backend_name()=="sqlite" else "postgresql+psycopg"
 sync_url=database_url.set(drivername=sync_driver)
 
-config.set_main_option("sqlalchemy.url",sync_url.render_as_string(hide_password=False))
+config.set_main_option(
+    "sqlalchemy.url",sync_url.render_as_string(hide_password=False).replace("%", "%%")
+    )
 
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
