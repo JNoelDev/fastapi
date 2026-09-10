@@ -15,4 +15,5 @@ class ResponseRegister(BaseModel):
     userd_id: uuid.UUID
     first_name:str
     last_name:str
-    date:datetime
+    created_at:datetime
+    updated_at:datetime|None

@@ -3,7 +3,7 @@ from datetime import datetime
 from sqlalchemy import Uuid,text,DateTime,func
 from sqlalchemy.orm import Mapped, mapped_column
 
-class UUIDStamp:
+class UUIDStampz:
 
     id:Mapped[uuid.UUID]=mapped_column(
         Uuid(as_uuid=True),
