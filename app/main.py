@@ -6,8 +6,8 @@ settings=get_settings()
 
 app=FastAPI(
     title=settings.app_name,
-    docs_url="/api/docs" if settings.environment=="development" else None,
-    redoc_url="/api/redoc" if settings.environment=="development" else None,
+    docs_url="/my_api/docs" if settings.environment=="development" else None,
+    redoc_url="/my_api/redoc" if settings.environment=="development" else None,
 )
 
 app.include_router(register_router,prefix=settings.prefix_app)
