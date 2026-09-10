@@ -7,7 +7,7 @@ class Register(BaseModel):
     first_name : str = Field(min_length=4,max_length=20)
     last_name:str = Field(min_length=4,max_length=20)
     email:EmailStr
-    password:str
+    password:str 
 
 
 class ResponseRegister(BaseModel):
