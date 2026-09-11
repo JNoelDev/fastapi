@@ -4,7 +4,11 @@ from functools import lru_cache
 import os
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=os.getenv(".Env_FILE",".env"),extra="ignore")
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        extra="ignore",
+        populate_by_name=True,
+    )
 
     app_name : str = Field(...,alias="APP_NAME")
     environment : str = Field(...,alias="ENVIRONMENT")

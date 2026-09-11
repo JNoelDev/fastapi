@@ -5,6 +5,7 @@ description = "FastAPI modular monolith backend"
 requires-python = ">=3.11"
 dependencies = [
   "fastapi>=0.115.0",
+  "fastapi[standard]>=0.115.0",
   "uvicorn[standard]>=0.30.0",
   "sqlalchemy>=2.0.30",
   "asyncpg>=0.29.0",
