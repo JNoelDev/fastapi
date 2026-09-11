@@ -1,5 +1,4 @@
 services:
-  # API service
   api:
     build: .
     ports:
@@ -14,8 +13,7 @@ services:
       db:
         condition: service_healthy
 
-    
-  # Database service
+
   db:
     image: postgres:17.6
     environment:
