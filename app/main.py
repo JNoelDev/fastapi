@@ -6,8 +6,8 @@ settings=get_settings()
 
 app=FastAPI(
     title=settings.app_name,
-    docs_url="/my_api/docs",
-    redoc_url="/my_api/redoc",
+    docs_url=f"{settings.prefix_app}/docs",
+    redoc_url=f"{settings.prefix_app}/redoc",
 )
 
 app.include_router(register_router,prefix=settings.prefix_app)
