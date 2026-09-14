@@ -16,4 +16,4 @@ class ResponseRegister(BaseModel):
     first_name:str
     last_name:str
     created_at:datetime
-    updated_at:datetime|None
+    updated_at:datetime
